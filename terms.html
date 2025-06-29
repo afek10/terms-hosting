@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תנאי שימוש - ווטסאפ אוטומטי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1976d2;
+            --secondary-color: #f50057;
+            --surface-color: #ffffff;
+            --background-color: #f5f5f5;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --shadow-light: rgba(25, 118, 210, 0.1);
+            --shadow-medium: rgba(25, 118, 210, 0.15);
+        }
+
+        body {
+            font-family: 'Heebo', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.05) 0%, var(--background-color) 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content-card {
+            background: var(--surface-color);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            border: 1px solid rgba(25, 118, 210, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .terms-content {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(25, 118, 210, 0.1);
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .section-content {
+            margin-bottom: 20px;
+            text-align: justify;
+            color: var(--text-primary);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(245, 0, 87, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid rgba(245, 0, 87, 0.2);
+            margin-top: 40px;
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px var(--shadow-medium);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+                margin: -20px -10px 30px -10px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 25px;
+                border-radius: 20px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .terms-content {
+                font-size: 14px;
+            }
+        }
+
+        /* RTL specific adjustments */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="header-icon">
+                <span class="material-icons" style="font-size: 40px;">description</span>
+            </div>
+            <h1>תנאי שימוש והגבלות</h1>
+            <p>עודכן לאחרונה: ינואר 2025</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="terms-content">
+                <h2 class="section-title">1. מבוא והסכמה לתנאים</h2>
+                <div class="section-content">
+                    תנאי שימוש אלה מהווים הסכם משפטי מחייב בין המשתמש (להלן: "אתה" או "המשתמש") לבין מפתחי אפליקציית "ווטסאפ אוטומטי" (להלן: "האפליקציה"). שימושך באפליקציה, לרבות הורדה, התקנה או שימוש בכל תכונה שלה, מהווה הסכמתך המלאה והבלתי מסויגת לתנאים אלה. אם אינך מסכים לתנאים אלה, אל תשתמש באפליקציה.
+                </div>
+
+                <h2 class="section-title">2. תיאור השירות</h2>
+                <div class="section-content">
+                    האפליקציה הינה כלי עזר המיועד לייעל ולסייע בתהליך הידני של שליחת הודעות WhatsApp לרשימת נמענים. האפליקציה פועלת כממשק המכין את ההודעה והנמען בכל פעם, אך פעולת השליחה הפיזית מתבצעת על ידי המשתמש באופן ידני לחלוטין דרך אפליקציית WhatsApp הרשמית. אין כל אוטומציה בפעולת השליחה עצמה.
+                </div>
+
+                <h2 class="section-title">3. רישיון שימוש</h2>
+                <div class="section-content">
+                    אנו מעניקים לך רישיון מוגבל, אישי, בלתי-בלעדי, בלתי-ניתן להעברה וניתן לביטול, להתקין ולהשתמש באפליקציה לשימושך האישי או העסקי הפנימי, בכפוף לתנאי הסכם זה. רישיון זה אינו מקנה לך בעלות על האפליקציה או על זכויות יוצרים כלשהן בה.
+                </div>
+
+                <h2 class="section-title">4. מודל מנויים ותשלומים</h2>
+                <div class="section-content">
+                    האפליקציה מוצעת במודל "Freemium". גרסת החינם מוגבלת ל-20 הודעות בסך הכל. שדרוג למנוי פרימיום בתשלום חודשי מתחדש מאפשר שימוש בלתי מוגבל. התשלומים מבוצעים ומנוהלים על ידי חנויות האפליקציות (Google Play, App Store) והם כפופים לתנאי השימוש שלהן. ביטול המנוי יכול להתבצע דרך הגדרות החשבון בחנות האפליקציות הרלוונטית.
+                </div>
+
+                <h2 class="section-title">5. אחריות המשתמש והתנהלות הולמת</h2>
+                <div class="section-content">
+                    האחריות המלאה והבלעדית על תוכן ההודעות, חוקיות רשימות הנמענים, וההשלכות הנובעות מהשימוש באפליקציה חלה עליך בלבד. הנך מתחייב לא להשתמש באפליקציה למטרות לא חוקיות, לרבות אך לא רק: שליחת הודעות ספאם, הטרדה, הפצת תוכן פוגעני או מזיק, או הפרת זכויות צד שלישי כלשהו.
+                </div>
+
+                <h2 class="section-title">6. היעדר קשר והסתייגות לגבי WhatsApp</h2>
+                <div class="section-content">
+                    האפליקציה הינה כלי עזר צד-שלישי ואינה קשורה, מאושרת, ממומנת או נתמכת על ידי WhatsApp Inc. או חברת האם שלה, Meta. השימוש שלך באפליקציה זו, המייצרת פעילות חוזרת, עלול להוביל לחסימה או השעיה של חשבון WhatsApp שלך על ידי WhatsApp. אנו אינם אחראים לכל פעולה שתינקט נגדך על ידי WhatsApp.
+                </div>
+
+                <h2 class="section-title">7. קניין רוחני</h2>
+                <div class="section-content">
+                    כל זכויות היוצרים, סודות המסחר, הפטנטים וזכויות קניין רוחני אחרות באפליקציה הינן רכושם הבלעדי של המפתחים. אין להעתיק, לשנות, להפיץ, לבצע הנדסה הפוכה או ליצור יצירות נגזרות מהאפליקציה ללא רשות מפורשת בכתב.
+                </div>
+
+                <h2 class="section-title">8. הגבלת אחריות (Limitation of Liability)</h2>
+                <div class="section-content">
+                    במידה המרבית המותרת על פי חוק, המפתחים לא יהיו אחראים לכל נזק, ישיר, עקיף, מיוחד, תוצאתי או עונשי (לרבות אך לא רק, אובדן רווחים, אובדן נתונים, פגיעה במוניטין, או חסימת חשבון WhatsApp) הנובע מהשימוש או חוסר היכולת להשתמש באפליקציה, גם אם הם הוזהרו מפני אפשרות נזק כזה.
+                </div>
+
+                <h2 class="section-title">9. שיפוי (Indemnification)</h2>
+                <div class="section-content">
+                    הנך מסכים לשפות, להגן ולפטור את המפתחים מכל וכל תביעה, חבות, נזק, הפסד או הוצאה (לרבות שכר טרחת עורכי דין) הנובעים או קשורים לשימוש שלך באפליקציה, להפרת תנאים אלה, או להפרת זכויות של צד שלישי כלשהו.
+                </div>
+
+                <h2 class="section-title">10. פרטיות</h2>
+                <div class="section-content">
+                    האפליקציה אינה אוספת, מעבדת או משתפת מידע אישי, אנשי קשר או תוכן הודעות. כל הנתונים נשמרים באופן מקומי על מכשירך בלבד. אנו מחויבים לפרטיותך.
+                </div>
+
+                <h2 class="section-title">11. סיום השירות</h2>
+                <div class="section-content">
+                    אנו שומרים לעצמנו את הזכות להפסיק או להשהות את מתן השירותים או את גישתך לאפליקציה, באופן זמני או קבוע, מכל סיבה שהיא, ללא הודעה מוקדמת ולפי שיקול דעתנו הבלעדי.
+                </div>
+
+                <h2 class="section-title">12. שונות</h2>
+                <div class="section-content">
+                    תנאים אלה ממצים את מלוא ההסכמות בינך לבין המפתחים. על תנאים אלה יחולו דיני מדינת ישראל, וסמכות השיפוט הבלעדית בכל מחלוקת תהיה נתונה לבתי המשפט המוסמכים במחוז תל אביב-יפו.
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="material-icons contact-icon">contact_support</div>
+            <h3 class="contact-title">יש לכם שאלות?</h3>
+            <p class="contact-text">
+                לשאלות נוספות או הבהרות בנוגע לתנאי השימוש, צרו איתנו קשר דרך מסך "צור קשר" באפליקציה.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 ווטסאפ אוטומטי. כל הזכויות שמורות.</p>
+    </div>
+</body>
+</html> 

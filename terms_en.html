@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - WA auto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1976d2;
+            --secondary-color: #f50057;
+            --surface-color: #ffffff;
+            --background-color: #f5f5f5;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --shadow-light: rgba(25, 118, 210, 0.1);
+            --shadow-medium: rgba(25, 118, 210, 0.15);
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, rgba(25, 118, 210, 0.05) 0%, var(--background-color) 100%);
+            min-height: 100vh;
+            direction: ltr; /* Set direction to LTR */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 8px 32px var(--shadow-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content-card {
+            background: var(--surface-color);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px var(--shadow-light);
+            border: 1px solid rgba(25, 118, 210, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .terms-content {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(25, 118, 210, 0.1);
+        }
+
+        .section-title:first-child {
+            margin-top: 0;
+        }
+
+        .section-content {
+            margin-bottom: 20px;
+            text-align: left; /* Adjusted for LTR */
+            color: var(--text-primary);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, rgba(245, 0, 87, 0.1) 0%, rgba(25, 118, 210, 0.1) 100%);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid rgba(245, 0, 87, 0.2);
+            margin-top: 40px;
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow-light);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px var(--shadow-medium);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 40px 20px;
+                margin: -20px -10px 30px -10px;
+                border-radius: 0 0 30px 30px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 25px;
+                border-radius: 20px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .terms-content {
+                font-size: 14px;
+            }
+        }
+
+        /* Material Icons setup */
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="header-icon">
+                <span class="material-icons" style="font-size: 40px;">description</span>
+            </div>
+            <h1>Terms and Conditions</h1>
+            <p>Last Updated: January 2025</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-card">
+            <div class="terms-content">
+                <h2 class="section-title">1. Introduction and Acceptance of Terms</h2>
+                <div class="section-content">
+                    These Terms of Use constitute a binding legal agreement between the user (hereinafter: "you" or "the user") and the developers of the "WA auto" application (hereinafter: "the Application"). Your use of the Application, including downloading, installing, or using any of its features, constitutes your full and unconditional agreement to these terms. If you do not agree to these terms, do not use the Application.
+                </div>
+
+                <h2 class="section-title">2. Service Description</h2>
+                <div class="section-content">
+                    The Application is a utility tool designed to streamline and assist in the manual process of sending WhatsApp messages to a list of recipients. The Application acts as an interface that prepares the message and recipient each time, but the physical act of sending is performed entirely manually by the user through the official WhatsApp application. There is no automation in the sending action itself.
+                </div>
+
+                <h2 class="section-title">3. License to Use</h2>
+                <div class="section-content">
+                    We grant you a limited, personal, non-exclusive, non-transferable, and revocable license to install and use the Application for your personal or internal business use, subject to the terms of this agreement. This license does not grant you ownership of the Application or any copyrights therein.
+                </div>
+
+                <h2 class="section-title">4. Subscription Model and Payments</h2>
+                <div class="section-content">
+                    The Application is offered on a "Freemium" model. The free version is limited to a total of 20 messages. Upgrading to a premium subscription with a recurring monthly payment allows for unlimited use. Payments are processed and managed by the app stores (Google Play, App Store) and are subject to their terms of use. Subscription cancellation can be done through the account settings in the respective app store.
+                </div>
+
+                <h2 class="section-title">5. User Responsibility and Proper Conduct</h2>
+                <div class="section-content">
+                    The full and exclusive responsibility for the content of the messages, the legality of the recipient lists, and the consequences arising from the use of the Application rests solely with you. You undertake not to use the Application for illegal purposes, including but not limited to: sending spam messages, harassment, distributing offensive or harmful content, or infringing on the rights of any third party.
+                </div>
+
+                <h2 class="section-title">6. No Affiliation with and Disclaimer Regarding WhatsApp</h2>
+                <div class="section-content">
+                    The Application is a third-party utility and is not affiliated with, endorsed, sponsored, or supported by WhatsApp Inc. or its parent company, Meta. Your use of this Application, which generates repetitive activity, may lead to the blocking or suspension of your WhatsApp account by WhatsApp. We are not responsible for any action taken against you by WhatsApp.
+                </div>
+
+                <h2 class="section-title">7. Intellectual Property</h2>
+                <div class="section-content">
+                    All copyrights, trade secrets, patents, and other intellectual property rights in the Application are the exclusive property of the developers. You may not copy, modify, distribute, reverse engineer, or create derivative works from the Application without express written permission.
+                </div>
+
+                <h2 class="section-title">8. Limitation of Liability</h2>
+                <div class="section-content">
+                    To the maximum extent permitted by law, the developers shall not be liable for any direct, indirect, special, consequential, or punitive damages (including but not limited to, loss of profits, loss of data, damage to reputation, or blocking of a WhatsApp account) arising from the use or inability to use the Application, even if they have been advised of the possibility of such damage.
+                </div>
+
+                <h2 class="section-title">9. Indemnification</h2>
+                <div class="section-content">
+                    You agree to indemnify, defend, and hold harmless the developers from any and all claims, liabilities, damages, losses, or expenses (including attorneys' fees) arising from or related to your use of the Application, your violation of these terms, or your violation of any third-party rights.
+                </div>
+
+                <h2 class="section-title">10. Privacy</h2>
+                <div class="section-content">
+                    The Application does not collect, process, or share personal information, contacts, or message content. All data is stored locally on your device only. We are committed to your privacy.
+                </div>
+
+                <h2 class="section-title">11. Termination of Service</h2>
+                <div class="section-content">
+                    We reserve the right to terminate or suspend the provision of services or your access to the Application, temporarily or permanently, for any reason, without prior notice and at our sole discretion.
+                </div>
+
+                <h2 class="section-title">12. Miscellaneous</h2>
+                <div class="section-content">
+                    These terms constitute the entire agreement between you and the developers. These terms shall be governed by the laws of the State of Israel, and the exclusive jurisdiction for any dispute shall be vested in the competent courts of the Tel Aviv-Yafo district.
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <div class="material-icons contact-icon">contact_support</div>
+            <h3 class="contact-title">Have any questions?</h3>
+            <p class="contact-text">
+                For additional questions or clarifications regarding the terms of use, please contact us through the "Contact Us" screen in the application.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 WA auto. All rights reserved.</p>
+    </div>
+</body>
+</html> 
